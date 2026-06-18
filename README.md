@@ -12,16 +12,10 @@ Estimated time: **4–6 hours**
 
 ## Tech Stack — Required
 
-| Concern           | Technology                   |
-|-------------------|------------------------------|
-| Framework         | React 18+ (Vite recommended) |
-| Language          | TypeScript (strict mode)     |
-| Forms             | React Hook Form              |
-| Validation        | Zod                          |
-| State management  | Redux Toolkit                |
-| Translations      | i18next + react-i18next      |
-| Component library | Your choice (see note below) |
-| HTTP client       | Your choice                  |
+| Concern   | Technology                   |
+|-----------|------------------------------|
+| Framework | React 18+ (Vite recommended) |
+| Language  | TypeScript (strict mode)     |
 
 > **Component library note:** Pick one you know well and can justify. Document your choice in `README.md` with a brief rationale.
 
@@ -72,7 +66,7 @@ Validation errors from `POST` and `PUT` are returned as a `400` response with an
 - Show at minimum: title, type, city, and image (if available)
 - Filter panel: filter by `type` and `city`
 - Sort controls: sort by `id`, `title`, or `city`; toggle `asc`/`desc`
-- Filter and sort state must live in Redux and survive navigation (going to a detail page and back should preserve them)
+- Filter and sort state must survive navigation (going to a detail page and back and also refreshing a page on a list should preserve them)
 - Handle loading and empty states
 
 ### 2. Event Detail page
@@ -84,10 +78,10 @@ Validation errors from `POST` and `PUT` are returned as a `400` response with an
 
 ### 3. Create Event page
 
-- Full form validated with Zod and wired to React Hook Form
+- Form validation
 - `type` field rendered as a select with the three allowed values
 - On success: redirect to the newly created event's detail page
-- On error: display field-level errors — both client-side (Zod) and server-side (API `400` response)
+- On error: display field-level errors
 
 ### 4. Edit Event page
 
@@ -103,30 +97,17 @@ Validation errors from `POST` and `PUT` are returned as a `400` response with an
 
 - Support **English** (`en`) and **Polish** (`pl`)
 - Language switcher accessible from every page
-- All visible strings go through i18next — no hardcoded UI text anywhere
-- Persist the selected language to `localStorage`
-
----
-
-## State Management
-
-Use Redux Toolkit. How you structure slices is up to you. At minimum, filter and sort state must live in the store — not in local component state.
-
----
-
-## Validation
-
-Use Zod to define a schema that reflects the backend field constraints, and connect it to React Hook Form. When the API returns field-level errors in a `400` response, surface them on the relevant form fields as well.
+- Persist the selected language
 
 ---
 
 ## Bonus (nice to have, not required)
 
 - Optimistic updates on delete
-- URL-synced filters (query params reflect Redux filter state)
+- URL-synced filters
 - Image drag-and-drop upload
 - Skeleton loaders instead of spinners
-- Unit tests for the Zod schema and at least one Redux slice
+- Unit tests
 
 ---
 
