@@ -1,3 +1,5 @@
+# ❗️ *Design for a certain functionality or whole app is required*
+
 # Frontend Developer Interview Task
 
 ## Overview
@@ -5,8 +7,6 @@
 Build a **React single-page application** for managing events. A working backend REST API is provided — your job is to implement the entire frontend against it.
 
 This task is intentionally open-ended in areas like component library choice and visual design. We'll be evaluating your decision-making as much as your code.
-
-Estimated time: **4–6 hours**
 
 ---
 
@@ -119,6 +119,7 @@ Validation errors from `POST` and `PUT` are returned as a `400` response with an
    - Component library choice and rationale
    - Any architectural decisions worth highlighting
    - Known limitations or trade-offs
+   - If you used AI assistance, please specify in what capacity/scope.
 
 ---
 
